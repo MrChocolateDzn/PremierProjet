@@ -5,9 +5,46 @@
 </HEAD>
 <BODY>
     <div id="root">
-  Y a rien pour le moment
+  Y a rien pour le moment <br>
+        <input type="text" id="msg" v-model="message">
+        <p>Vous avez saisi : {{message}}</p>
+        <br>
+        <input type="text" id="tab" v-model="unprof">
+        <br>
+        <button id="bdp" @click="ajouternom">
+            Ajouter un prof
+        </button>
+        <ul>
+            <li v-for="nomProfs in professeurs">
+                Le nom est : {{nomProfs}}
+            </li>
+        </ul>
     </div>
-  
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#root',
+            data: {
+                message: 'Le SIO c\'est rigolo',
+                professeurs: ['Robert','Damico','Roubeau','Vigny'],
+                unprof:'',
+            },
+            mounted()
+            {
+               /* document.querySelector('#bdp').addEventListener('click',() => {
+                    let nvNom = document.querySelector('#tab');
+                    app.professeurs.push(nvNom.value);
+                })
+                */
+            },
+            methods: {
+                ajouternom() {
+                    this.professeurs.push(this.unprof)
+                }
+            }
+            }
+        )
+    </script>
 
 </BODY>
 </HTML>
