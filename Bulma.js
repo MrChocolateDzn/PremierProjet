@@ -1,4 +1,4 @@
-Vue.compenent('competence', {
+Vue.component('competence', {
     props: {
         title: '',
         contenu: ''
@@ -7,7 +7,7 @@ Vue.compenent('competence', {
     <article class="message">
     <div class="message-header">
     {{title}}
-    <span class="close"> x </span>
+    <span class="close"> X </span>
     </div>
     <div class="message-body">
     {{contenu}}
